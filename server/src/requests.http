@@ -1,0 +1,13 @@
+GET http://localhost:4000/recipes
+
+###
+
+GET http://localhost:4000/recipes/62711acf7c2bac974e58af0b
+
+###
+
+GET http://localhost:4000/categories
+
+###
+
+GET http://localhost:4000/category/Billig/sopp

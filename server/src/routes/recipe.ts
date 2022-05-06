@@ -1,5 +1,5 @@
 import express from 'express'
-import { getRecipes, getRecipesByQuery } from '../db/recipe'
+import { getRecipes, getRecipeById, getRecipesByQuery } from '../db/recipe'
 
 const router = express.Router()
 
@@ -16,8 +16,9 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.get("/id", async (req, res) => {
-  
+router.get("/:id", async (req, res) => {
+  const recipe = await getRecipeById(req.params.id)
+  res.json(recipe)
 })
 
 export default router

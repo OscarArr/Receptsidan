@@ -25,10 +25,13 @@ const app = express()
 
 // Routers
 app.use('/recipes', recipeRouter)
+app.use('/id', recipeRouter)
 app.use('/categories', categoryRouter)
+app.use('/category', categoryRouter)
+// app.use('/category/recepies', categoryRouter)
 
 app.use(json())
-const port = 3000
+const port = 4000
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!')

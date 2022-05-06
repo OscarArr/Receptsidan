@@ -9,8 +9,8 @@ export const getRecipesByQuery = async (query: any) => {
     {"title" : {'$regex' : query, '$options': "i" }})
 }
 
-export const getRecipesById = async (id: string) => {
+export const getRecipeById = async (id: string) => {
   return await RecipeModel.find(
-    {_id : id}
+    {"_id" : id}
   )
 }
