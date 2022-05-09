@@ -1,15 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import RecipeList from './components/RecipeList';
+import SearchBar from './components/SearchComponent';
 
 const App = () => {
   return (
     <div className="App">
-      <div>
-        <p>
-          hejselihejseli hejsan
-        </p>
-      </div>
+      {/* <SearchBar /> */}
       <RecipeList />
     </div>
   )
