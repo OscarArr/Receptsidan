@@ -1,27 +1,30 @@
 import express, { Request, Response, json } from 'express'
 import mongoose from 'mongoose'
+import cors from 'cors'
+
 import recipeRouter from './routes/recipe'
 import categoryRouter from './routes/category'
 
 
+const app = express()
+
+
 const url = `mongodb+srv://OscarArr:KalasFest12@recipedb.xipac.mongodb.net/RecipeDB?retryWrites=true&w=majority`;
 
-const connectionParams = {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true 
-}
-// mongoose.connect(url,connectionParams)
 mongoose.connect(url)
     .then( () => {
         console.log('Connected to the database ')
     })
     .catch( (err) => {
-        console.error(`Error connecting to the database. n${err}`);
+      console.error(`Error connecting to the database. n${err}`);
     })
 
-    
-const app = express()
+
+
+app.use(cors());
+app.use(json());
+const port = 4000;
+
 
 // Routers
 app.use('/recipes', recipeRouter)
@@ -30,8 +33,6 @@ app.use('/categories', categoryRouter)
 app.use('/category', categoryRouter)
 // app.use('/category/recepies', categoryRouter)
 
-app.use(json())
-const port = 4000
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!')
