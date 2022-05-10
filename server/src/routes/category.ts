@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 //   }
 // })
 
-router.get("/:category", async (req, res) => {
+router.get("/:category/recipes", async (req, res) => {
   const query = req.query
   if(Object.keys(req.query).length > 0){
     if(Object.keys(req.query).includes("search")){

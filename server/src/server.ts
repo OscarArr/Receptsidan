@@ -28,9 +28,7 @@ const port = 4000;
 
 // Routers
 app.use('/recipes', recipeRouter)
-app.use('/id', recipeRouter)
 app.use('/categories', categoryRouter)
-app.use('/category', categoryRouter)
 // app.use('/category/recepies', categoryRouter)
 
 
