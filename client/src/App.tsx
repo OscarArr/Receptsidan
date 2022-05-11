@@ -1,4 +1,5 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import SideBarNav from './components/SideBarNav';
 import NavBar from './components/NavBar';
@@ -10,9 +11,9 @@ const App = () => {
     <div className="App">
       <RecipeList />
       <NavList />
-      {/* <SideBarNav /> */}
-      {/* <NavBar /> */}
-      {/* <SearchBar /> */}
+      {/* <Routes>
+        <Route path="/" element={<NavBar />} />
+      </Routes> */}
     </div>
   )
 }

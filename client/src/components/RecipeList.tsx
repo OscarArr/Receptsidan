@@ -34,7 +34,7 @@ import { useState, useEffect } from "react";
 const RecipeList = () => {    
     const [query, setQuery] = useState("");
     const searchRecipes = async (query: string) => {
-        console.log("hej", query)
+        // console.log("hej", query)
         const recipes = await fetch(`http://localhost:4000/recipes?search=${query}`)
         .then(res => res.json())
         setRecipes(recipes);
@@ -47,7 +47,7 @@ const RecipeList = () => {
             .then(res => res.json())
         setRecipes(recipes);
     }
-    console.log(query)
+    // console.log(query)
     if(query){
         searchRecipes(query)
     }else{
