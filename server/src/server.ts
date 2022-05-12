@@ -1,15 +1,16 @@
 import express, { Request, Response, json } from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
+import dotenv from 'dotenv'
 
 import recipeRouter from './routes/recipe'
 import categoryRouter from './routes/category'
 
 
 const app = express()
+dotenv.config()
 
-
-const url = `mongodb+srv://OscarArr:KalasFest12@recipedb.xipac.mongodb.net/RecipeDB?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@recipedb.xipac.mongodb.net/RecipeDB?retryWrites=true&w=majority`;
 
 mongoose.connect(url)
     .then( () => {
