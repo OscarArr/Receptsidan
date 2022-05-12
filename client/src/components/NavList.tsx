@@ -18,26 +18,31 @@ const NavList = () => {
   
   useEffect(() => {
     const Links = async () => {
-      const NavLinks = await getFetch("categories")  
+      const navLinks = await getFetch("categories")  
       // console.log("direkt från fetch", getFetch("categories"))
       // console.log("variabeln", NavLinks)
-      setNavLinks(NavLinks)
+      setNavLinks(navLinks)
     }
     Links()
-
+    console.log(Links())
+    console.log("NavLinks",navLinks)
 
   }, [])
 
-const ListItem = NavLinks.map((link: any) => {
-  <li>
-    <Link to={`/categories/${link}`}>{link}</Link>
-  </li>
-  }
-)
+// const ListItem = NavLinks.map((link: any) => {
+//   <li>
+//     <Link to={`/categories/${link}`}>{link}</Link>
+//   </li>
+//   }
+// )
 
   return (
     <ul className="nav-bar">
-      {ListItem}
+      {/* {ListItem} */}
+      {navLinks.map((link: any) => <li key={link} >
+          {/* <Link to={link}>{link}</Link>  */}
+          {link}
+        </li> )}
     </ul>
   )
 }
