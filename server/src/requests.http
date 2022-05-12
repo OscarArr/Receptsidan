@@ -10,8 +10,8 @@ GET http://localhost:4000/categories
 
 ###
 
-GET http://localhost:4000/category/Billig?search=sopp
+GET http://localhost:4000/categories/Billig/recipes?search=sopp
 
 ###
 
-GET http://localhost:4000/category/Kött/
+GET http://localhost:4000/categories/Billig/recipes

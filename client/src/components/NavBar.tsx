@@ -1,4 +1,3 @@
-import NavButton from "./NavButton"
 import {
   BrowserRouter as Router,
   useLocation,
@@ -6,15 +5,18 @@ import {
   Link,
   useParams
 } from 'react-router-dom'
+import NavButton from "./NavButton"
 
 
 const NavBar = () => {
   return (
     <nav className="nav-bar">
-      {/* <NavButton>
+      <NavButton>
         <Link to="/categories">Categories</Link>
-      </NavButton> */}
-      <Link to="/categories">Categories</Link>
+      </NavButton>
+      <NavButton>
+        <Link to="/recipes">Recipes</Link>
+      </NavButton>
     </nav>
   )
 }
