@@ -2,21 +2,14 @@ import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   useLocation,
-  Route,
+  // Route,
   Link,
-  useParams
+  // useParams
 } from 'react-router-dom'
 import getFetch from '../api/apiFetch'
 
 
-// If currentLocation === "/recipes" {
-//   sätt så att det skriver ut från objekt }
-// else if (currentLocation === "/categories") {
-//   sätt så att det skriver ut från sträng}
-// }
-
-
-const NavList = () => {
+const NavList = (props: any) => {
   // const [showNavLinks, setShowNavLinks] = useState(false);
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
@@ -34,34 +27,39 @@ const NavList = () => {
 
   }, [])
 
-  // const ListItem = navLinks.map((link: any) => {
-  //   <li>
-  //     <Link to={`/categories/${link}`}>{link}</Link>
-  //   </li>
+  // const handleClick = () => {
+  //   setShowNavLinks(!showNavLinks);
+  //   const recipeLinks = () => {
+  //     return (navLinks.map((link: any) => <li key={link._id} >
+  //         <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
+  //       </li> ))
   //   }
-  // )
-  // console.log("listItem", ListItem)
+  //   console.log(recipeLinks())
+  // }
+
   const getPrintType = () => {
-    if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
-      // console.log("categories")
-      return (navLinks.map((link: any) => 
-        <li key={link}>
-          <Link to={`/categories/${link}/recipes`}>{link}</Link>
-        </li>
-      ))
-    } else if (currentLocation.pathname.includes("/recipes")) {
-      // console.log("recipes")
-      return (navLinks.map((link: any) => <li key={link._id} >
-      <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
-      </li> ))
-    } 
+    // if (
+    //   // currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/"
+    //   props.category
+    //   ) {
+    //   return (navLinks.map((link: any) => 
+    //     <li key={link} onClick={() => setShowNavLinks(!showNavLinks)}>
+    //       <Link to={`/categories/${link}/recipes`}>{link}</Link>
+    //     </li>
+    //   ))
+    // } else if (currentLocation.pathname === "/recipes" || currentLocation.pathname === "/recipes/") 
+    // {
+        return (navLinks.map((link: any) => <li key={link._id} >
+          <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
+        </li> ))
+    // } 
   }
   const ListItem: any = getPrintType()
   // console.log("ListItem", ListItem)
 
   
   return (
-    <ul className="nav-bar">
+    < >
       {ListItem}
       {/* {navLinks.map((link: any) => <li key={link._id} >
           <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
@@ -69,7 +67,7 @@ const NavList = () => {
       {/* {navLinks.map((link: any) => <li key={link} >
           <Link to={`/${link}`}>{link}</Link> 
         </li> )} */}
-    </ul>
+    </>
   )
 }
 

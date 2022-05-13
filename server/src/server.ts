@@ -8,6 +8,7 @@ import categoryRouter from './routes/category'
 
 
 const app = express()
+const port = 4000;
 dotenv.config()
 
 const url = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@recipedb.xipac.mongodb.net/RecipeDB?retryWrites=true&w=majority`;
@@ -24,7 +25,6 @@ mongoose.connect(url)
 
 app.use(cors());
 app.use(json());
-const port = 4000;
 
 
 // Routers

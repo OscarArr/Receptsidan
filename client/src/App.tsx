@@ -4,7 +4,8 @@ import RecipeList from './components/RecipeList';
 import SideBarNav from './components/SideBarNav';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchComponent';
-import NavList from './components/NavList'
+import NavList from './components/RecipesNavList'
+import CategoryNavList from './components/CategoryNavList'
 
 
 
@@ -17,8 +18,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<NavBar />} />
           <Route path="/recipes" element={<NavList />} />
-          <Route path="/categories" element={<NavList />} />
-          <Route path="/categories/:category/recipes" element={<NavList />} />
+          <Route path="/categories" element={<CategoryNavList />} />
+          <Route path="/categories/:category/recipes" element={<CategoryNavList />} />
         </Routes>
       </BrowserRouter>
     </div>
