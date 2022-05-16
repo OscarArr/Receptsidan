@@ -22,15 +22,17 @@ const SearchBar = (props: any) => {
     width: 90%;
     margin: auto;
     margin-top: 10px;
-
   `
 
   const location = () => {
-    if(props.location.includes("/recipes") || props.location === "/"){
+    if (props.location.split("/")[1] === "categories"){
+      return (`category ${props.location.split("/")[2]}`)
+    }
+    else if(props.location.includes("/recipes") || props.location === "/"){
       return "recipes"
     } 
-    else if (props.location.split("/")[1] === "categories"){
-      return "categories"
+    if (props.location.split("/")[1] === "categories"){
+      return (`category ${props.location.split("/")[2]}`)
     }
   }
   

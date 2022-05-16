@@ -14,17 +14,17 @@ const NavList = (props: any) => {
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()
-  // console.log("currentLocation", currentLocation.pathname)
-
-  console.log("NavList")
-  console.log(currentLocation.pathname)
   
   useEffect(() => {
     const Links = async () => {
+      if(currentLocation.search != "") {
+        const navLinks = await getFetch(currentLocation.pathname + currentLocation.search) 
+        setNavLinks(navLinks)
+      } else {
       const navLinks = await getFetch(currentLocation.pathname)  
-      // console.log("direkt från fetch", getFetch("categories"))
-      // console.log("variabeln", navLinks)
       setNavLinks(navLinks)
+      }
+      // setNavLinks(navLinks)
     }
     Links()
 

@@ -10,27 +10,25 @@ import getFetch from '../api/apiFetch'
 
 
 const RecipeCard = (props: any) => {
-  const [navLinks, setNavLinks] = useState<any[]>([]);
+  const [recipeData, setRecipeData] = useState<any[]>([]);
   
   const currentLocation = useLocation()
 
   useEffect(() => {
-    const Links = async () => {
-      const navLinks = await getFetch(currentLocation.pathname)  
-      // console.log("direkt från fetch", getFetch("categories"))
-      // console.log("variabeln", navLinks)
-      setNavLinks(navLinks)
+    const getRecipeData = async () => {
+      const recipeData = await getFetch(currentLocation.pathname)  
+      console.log("variabeln", recipeData)
+      setRecipeData(recipeData)
     }
-    Links()
+    getRecipeData()
 
   }, [])
   
-  if (currentLocation.pathname.includes("/recipes")) {
-      // console.log("recipes")
-      return (navLinks.map((link: any) => <li key={link._id} >
-      <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
-      </li> ))
-    } 
+  return (
+    <section className="recipe-card">
+      <h1>hej</h1>
+    </section>
+  )
 }
 
 export default RecipeCard

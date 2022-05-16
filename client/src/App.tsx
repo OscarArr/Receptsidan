@@ -7,6 +7,7 @@ import SearchBar from './components/SearchComponent';
 import NavList from './components/RecipesNavList'
 import CategoryNavList from './components/CategoryNavList'
 import RecipeLink from './components/RecipeLink';
+import RecipeCard from './components/RecipeCard';
 
 
 const App = () => {
@@ -16,10 +17,10 @@ const App = () => {
       <SideBarNav />
         <Routes>
           <Route path="/recipes/:id" >
-            
+            {/* <RecipeCard /> */}
           </Route>
           <Route path="categories/:category/recipes/:id" >
-
+            {/* <RecipeCard /> */}
           </Route>
           {/* <Route path="/recipes" element={<SideBarNav />} />
           <Route path="/categories" element={<SideBarNav />} /> */}
