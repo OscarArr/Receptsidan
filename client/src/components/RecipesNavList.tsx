@@ -15,6 +15,9 @@ const NavList = (props: any) => {
   
   const currentLocation = useLocation()
   // console.log("currentLocation", currentLocation.pathname)
+
+  console.log("NavList")
+  console.log(currentLocation.pathname)
   
   useEffect(() => {
     const Links = async () => {
@@ -38,6 +41,7 @@ const NavList = (props: any) => {
   // }
 
   const getPrintType = () => {
+
     // if (
     //   // currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/"
     //   props.category
@@ -50,7 +54,7 @@ const NavList = (props: any) => {
     // } else if (currentLocation.pathname === "/recipes" || currentLocation.pathname === "/recipes/") 
     // {
         return (navLinks.map((link: any) => <li key={link._id} >
-          <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
+          <Link to={`${currentLocation.pathname}/${link._id}`}>{link.title}</Link> 
         </li> ))
     // } 
   }

@@ -1,4 +1,3 @@
-// import React from "react";
 import {
   BrowserRouter as Router,
   useLocation,
@@ -7,47 +6,60 @@ import {
   useParams
 } from 'react-router-dom'
 import { useEffect, useState } from "react";
+import SearchBar from './SearchComponent';
+import NavList from './RecipesNavList'
+import CategoryNavList from './CategoryNavList'
+import RecipeLink from './RecipeLink';
+import NavButton from "./NavButton"
+import styled from 'styled-components';
 
-// function useQuery() {
-//   const { search } = useLocation();
 
-//   return React.useMemo(() => new URLSearchParams(search), [search]);
-// }
+const StyledButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+`
+
+const SideBarNavStyled = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  max-width: 400px;
+  min-width: 300px;
+  background-color: #f5f5f5;
+  height: 100vh;
+`
+
 
 const SideBarNav = () => {
   const currentLocation = useLocation()
-  // const query1 = useQuery()
-
-  console.log(currentLocation)
-  // console.log(query1)
-  console.log(window.location)
-  console.log(window.location.href)
+  console.log("SideBarNav")
+  // const [showCategories, setShowCategories] = useState(false);
+  // const [showRecipes, setShowRecipes] = useState(false);
   
   const [query, setQuery] = useState("");
   
-  const handleSubmit = (event: any) => {
-    // 👇️ prevent page refresh
-    event.preventDefault();
+  const chooseRender = () => {
+    if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
+      return (<CategoryNavList />)
+    } else if (currentLocation.pathname.includes("/cagegories") && currentLocation.pathname.includes("/recipes")) {
+      return (<RecipeLink />)
+    } else if (currentLocation.pathname.includes("/recipes")) {
+      return (<NavList />)
+    }
+  }
 
-    console.log('form submitted ✅');
-  };
-
-    return (
-      <div className="side-bar">
-        <form  action="/" method="get">
-          {/* <label htmlFor="header-search">
-              <span className="visually-hidden">Search Recipes</span>
-          </label> */}
-          <input onChange={(e) => setQuery((e.target as any).value)}
-              type="text"
-              id="header-search"
-              placeholder="Search Recipes"
-              name="search" 
-          />
-          <button type="submit">Search</button>
-        </form>
-      </div>
-    )
+  return (
+    <SideBarNavStyled className="side-bar">
+      <StyledButtonContainer className="nav-buttons">
+        <NavButton children="recipes" />
+        <NavButton children="categories" />
+        <SearchBar location={currentLocation.pathname}/>
+      </StyledButtonContainer>
+      {chooseRender()}
+    </SideBarNavStyled>
+  )
 }
 
 export default SideBarNav

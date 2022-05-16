@@ -9,6 +9,7 @@ import NavButton from "./NavButton"
 
 
 const NavBar = () => {
+  console.log("NavBar")
   return (
     <nav className="nav-bar">
       <NavButton>

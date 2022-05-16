@@ -1,24 +1,45 @@
 import {
   BrowserRouter as Router,
+  useLocation,
   Link
 } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import getFetch from '../api/apiFetch'
 
-const RecipeLink = (props: any) => {
-// console.log("prop",props)
+const RecipeLink = () => {
 const [recipeLinks, setRecipeLinks] = useState<any[]>([]);
+const currentLocation = useLocation()
+
+console.log("recipeLink")
 
   useEffect(() => {
     const Links = async () => {
-      const recipeLinks = await getFetch(`categories/${props.category}/recipes`)
+      const recipeLinks = await getFetch(currentLocation.pathname)
       setRecipeLinks(recipeLinks)
+      console.log(currentLocation)
     }
     Links()
   }, [])
-    
+
+  const getRecipesByCategory = () => {
+    return (
+      recipeLinks.map((link: any) => 
+        <li key={link._id} >
+          <Link to={`/recipes/${link._id}`}>{link.title}</Link>
+        </li>
+      )
+    )
+  }
+
+  const category = currentLocation.pathname.split("/")[2]
+
   return (
-    <Link to={`/recipes/${recipeLinks[0]._id}`}>{recipeLinks[0].title}</Link>
+    <div>
+      <h3>{category}</h3>
+      <ul>
+        {getRecipesByCategory()}
+      </ul>   
+    </div>
   )
   
 }

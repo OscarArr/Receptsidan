@@ -1,31 +1,53 @@
 import { useEffect, useState } from "react";
+import {
+  useLocation
+} from 'react-router-dom'
+import styled from 'styled-components'
 
-const SearchBar = () => {
+const SearchBar = (props: any) => {
 
-  const [query, setQuery] = useState("");
+  // const [query, setQuery] = useState("");
   
-  const handleSubmit = (event: any) => {
-    // 👇️ prevent page refresh
-    event.preventDefault();
+  // const handleSubmit = (event: any) => {
+  //   // 👇️ prevent page refresh
+  //   event.preventDefault();
 
-    console.log('form submitted ✅');
-  };
+  //   console.log('form submitted ✅');
+  // };
 
+  // onChange={(e) => setQuery((e.target as any).value)}
+
+  const StyledSearch = styled.form`
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+
+  `
+
+  const location = () => {
+    if(props.location.includes("/recipes") || props.location === "/"){
+      return "recipes"
+    } 
+    else if (props.location.split("/")[1] === "categories"){
+      return "categories"
+    }
+  }
   
 
     return (
-      <form  action="/" method="get">
+      <StyledSearch  action={useLocation().pathname} method="get">
         <label htmlFor="header-search">
-            <span className="visually-hidden">Search Recipes</span>
+          search in {location()}
         </label>
-        <input onChange={(e) => setQuery((e.target as any).value)}
+        <input 
             type="text"
             id="header-search"
             placeholder="Search Recipes"
             name="search" 
         />
         <button type="submit">Search</button>
-      </form>
+      </StyledSearch>
     )
 }
 

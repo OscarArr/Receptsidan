@@ -15,6 +15,8 @@ const CategoryNavList = (props: any) => {
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()
+
+  console.log("CategoryNavList")
   
   useEffect(() => {
     const Links = async () => {
@@ -39,9 +41,9 @@ const CategoryNavList = (props: any) => {
       return (navLinks.map((link: any) => 
         <li key={link} >
           <Link to={`/categories/${link}/recipes`}>
-            {link} ▼
+            {link} 
           </Link>
-          {showNavLinks && <RecipeLink category={link} />} 
+          {/* {showNavLinks && <RecipeLink category={link} />}  */}
         </li>
       ))
     }

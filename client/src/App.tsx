@@ -6,20 +6,24 @@ import NavBar from './components/NavBar';
 import SearchBar from './components/SearchComponent';
 import NavList from './components/RecipesNavList'
 import CategoryNavList from './components/CategoryNavList'
-
+import RecipeLink from './components/RecipeLink';
 
 
 const App = () => {
   return (
     <div className="App">
-      {/* <RecipeList /> */}
-      {/* <NavList /> */}
       <BrowserRouter>
+      <SideBarNav />
         <Routes>
-          <Route path="/" element={<NavBar />} />
-          <Route path="/recipes" element={<NavList />} />
-          <Route path="/categories" element={<CategoryNavList />} />
-          <Route path="/categories/:category/recipes" element={<CategoryNavList />} />
+          <Route path="/recipes/:id" >
+            
+          </Route>
+          <Route path="categories/:category/recipes/:id" >
+
+          </Route>
+          {/* <Route path="/recipes" element={<SideBarNav />} />
+          <Route path="/categories" element={<SideBarNav />} /> */}
+          {/* <Route path="/categories/:category/recipes" element={<RecipeLink />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
