@@ -14,14 +14,30 @@ const NavList = (props: any) => {
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()
+  // console.log("navList location recipeID", currentLocation.pathname)
+  // console.log("navList location split", currentLocation.pathname.split("/"))
+
+  const fetchUrl = () => {
+    const links = currentLocation.pathname.split("/")
+    if (currentLocation.pathname.includes("/categories")) {
+      links.splice(4, 1)
+      return links.join("/")
+    } else if (links.length === 3 && links[1] === "recipes") {
+      links.splice(2, 1)
+      return links.join("/")
+    } else {
+      return links.join("/")
+    }
+  }
   
+
   useEffect(() => {
     const Links = async () => {
       if(currentLocation.search != "") {
-        const navLinks = await getFetch(currentLocation.pathname + currentLocation.search) 
+        const navLinks = await getFetch(fetchUrl() + currentLocation.search) 
         setNavLinks(navLinks)
       } else {
-      const navLinks = await getFetch(currentLocation.pathname)  
+      const navLinks = await getFetch(fetchUrl())  
       setNavLinks(navLinks)
       }
       // setNavLinks(navLinks)

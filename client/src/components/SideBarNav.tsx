@@ -34,7 +34,6 @@ const SideBarNavStyled = styled.section`
 
 const SideBarNav = () => {
   const currentLocation = useLocation()
-  console.log("SideBarNav")
   // const [showCategories, setShowCategories] = useState(false);
   // const [showRecipes, setShowRecipes] = useState(false);
   
@@ -43,9 +42,11 @@ const SideBarNav = () => {
   const chooseRender = () => {
     if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
       return (<CategoryNavList />)
-    } else if (currentLocation.pathname.includes("/cagegories") && currentLocation.pathname.includes("/recipes")) {
-      return (<RecipeLink />)
-    } else if (currentLocation.pathname.includes("/recipes")) {
+    } 
+    // else if (currentLocation.pathname.includes("/cagegories") && currentLocation.pathname.includes("/recipes")) {
+    //   return (<RecipeLink />)
+    // } 
+    else if (currentLocation.pathname.includes("/recipes")) {
       return (<NavList />)
     }
   }

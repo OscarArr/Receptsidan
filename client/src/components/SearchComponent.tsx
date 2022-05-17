@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
-  useLocation
+  useLocation,
+  useParams
 } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -23,6 +24,13 @@ const SearchBar = (props: any) => {
     margin: auto;
     margin-top: 10px;
   `
+
+
+  // OBS!!
+  // använd useParams istället
+
+  // const params = useParams()
+  // console.log("search component params", params)
 
   const location = () => {
     if (props.location.split("/")[1] === "categories"){
