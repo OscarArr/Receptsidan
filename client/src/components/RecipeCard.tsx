@@ -13,7 +13,7 @@ import image from "../../assets/images/ädelgrytakonjak.jpg";
 
 const RecipeCard = (props: any) => {
 
-  const [recipeData, setRecipeData] = useState<any[]>([]);
+  // const [recipeData, setRecipeData] = useState<any[]>([]);
   
   const currentLocation = useLocation()
   const params = useParams()
@@ -32,13 +32,37 @@ const RecipeCard = (props: any) => {
     // }
     
 
-    const getRecipeData = async () => {
-      const recipeData = await getFetch(`/recipes/${params.id}`)  
-      setRecipeData(recipeData)
-    }
-    getRecipeData()
+    // const getRecipeData = async () => {
+    //   const recipeData = await getFetch(`/recipes/${params.id}`)  
+    //   setRecipeData(recipeData)
+    // }
+    // getRecipeData()
+    // console.log("recipeCard props data", props.data)
+    // const recipeData = () => {
+    //   if (props.data) {
+    //     return props.data
+    //   }
+    //   else {
+    //     return []
+    //   }
+    // } 
+    // console.log("recipeCard data", recipeData)
+    // setRecipeData(recipeData)
 
   }, [])
+
+  // console.log("recipeCard props data", props.data)
+  // const newRecipeData = () => {
+  //   if (props.data) {
+  //     return props.data
+  //   }
+  //   else {
+  //     return []
+  //   }
+  // } 
+  // console.log("recipeCard data", newRecipeData)
+  const recipeData = props.data
+  // console.log("recipeCard data", recipeData)
 
 const StyledRecipeCard = styled.section`
   min-width: 400px;
@@ -52,7 +76,7 @@ const StyledRecipeCard = styled.section`
   grid-template-areas: 
     "StyledTitle StyledTitle StyledTitle"
     "StyledPicture StyledPicture StyledPicture"
-    ". StyledDescription ."
+    "StyledDescription StyledDescription StyledDescription"
     "StyledInfo StyledInfo StyledInfo"
     "StyledIngredients StyledInstructions StyledInstructions"
     "StyledIngredients StyledInstructions StyledInstructions"
@@ -66,11 +90,12 @@ const StyledTitle = styled.h1`
 const StyledPicture = styled.img`
   grid-area: StyledPicture;
   width: 90%;
-  /* margin: 10px auto; */
+  margin: 0 auto;
 `
 const StyledDescription = styled.p`
   grid-area: StyledDescription;
   width: 60%;
+  margin: 0 auto;
   text-align: center;
 `
 
@@ -126,8 +151,8 @@ const StyledInstructions = styled.ol`
 
 
 const recipeCardInfo = () => {
-  if (recipeData.length > 0) {
-    const data: any = recipeData[0]
+  if (recipeData) {
+    const data: any = recipeData
     // console.log(data)
     return (
       <StyledRecipeCard className="recipe-card">

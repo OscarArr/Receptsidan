@@ -1,14 +1,9 @@
 import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import RecipeList from './components/RecipeList';
 import SideBarNav from './components/SideBarNav';
-import NavBar from './components/NavBar';
-import SearchBar from './components/SearchComponent';
-import NavList from './components/RecipesNavList'
-import CategoryNavList from './components/CategoryNavList'
-import RecipeLink from './components/RecipeLink';
 import RecipeCard from './components/RecipeCard';
 import styled from 'styled-components';
+import RecipeView from './components/RecipeView';
 
 
 const StyledApp = styled.div`
@@ -26,10 +21,10 @@ const App = () => {
       <BrowserRouter>
       <SideBarNav />
       <Routes>
-        <Route path="/recipes/:id" element={<RecipeCard />} >
+        <Route path="/recipes/:id" element={<RecipeView />} >
           {/* <RecipeCard /> */}
         </Route>
-        <Route path="categories/:category/recipes/:id" element={<RecipeCard />}>
+        <Route path="categories/:category/recipes/:id" element={<RecipeView />}>
           {/* <RecipeCard /> */}
         </Route>
         {/* <Route path="/recipes" element={<SideBarNav />} />
