@@ -166,13 +166,13 @@ const recipeCardInfo = () => {
           </StyledInfoChild>
           <StyledCategories>
             {data.category.map((cat: string) => 
-              <li>{cat}</li>
+              <li key={cat}>{cat}</li>
             )}
           </StyledCategories>
         </StyledInfo>
         <StyledIngredients className="ingredients">
           {data.ingredients.map((ingredient: any) => 
-            <li>{ingredient.amount} {ingredient.unit} {ingredient.ingredient}</li>
+            <li key={ingredient.ingredient}>{ingredient.amount} {ingredient.unit} {ingredient.ingredient}</li>
           )}
         </StyledIngredients>
         <StyledInstructions className="instructions">

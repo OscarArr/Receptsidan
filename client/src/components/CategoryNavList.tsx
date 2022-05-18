@@ -39,9 +39,9 @@ const CategoryNavList = (props: any) => {
   const getCategories = () => {
     if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
       return (navLinks.map((link: any) => 
-        <li key={link} >
-          <Link to={`/categories/${link}/recipes`}>
-            {link} 
+        <li key={link.name} >
+          <Link to={`/categories/${link.name}/recipes`}>
+            {link.name} ({link.count}) 
           </Link>
           {/* {showNavLinks && <RecipeLink category={link} />}  */}
         </li>

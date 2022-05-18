@@ -4,7 +4,7 @@ import {
   useLocation,
   // Route,
   Link,
-  // useParams
+  useParams
 } from 'react-router-dom'
 import getFetch from '../api/apiFetch'
 
@@ -14,6 +14,7 @@ const NavList = (props: any) => {
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()
+  
   // console.log("navList location recipeID", currentLocation.pathname)
   // console.log("navList location split", currentLocation.pathname.split("/"))
 

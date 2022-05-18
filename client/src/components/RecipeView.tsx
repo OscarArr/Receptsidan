@@ -21,11 +21,10 @@ const RecipeView = (props: any) => {
   useEffect(() => {
 
     const getRecipeData = async () => {
-      const recipeData = await getFetch(`/recipes/${params.id}`)  
-      setRecipeData(recipeData)
+      const recipe = await getFetch(`/recipes/${params.id}`)  
+      setRecipeData(recipe)
     }
     getRecipeData()
-
   }, [])
 
 const StyledRecipeCard = styled.section`
@@ -46,29 +45,34 @@ const StyledRecipeCard = styled.section`
     "StyledIngredients StyledInstructions StyledInstructions"
   ;
 `
-const StyledSingleComment = styled.div`
-  margin: 0 10px;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-`
-
 const StyledComments = styled.div`
-  margin: 0 10px;
+  margin: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
+`
+
+const StyledSingleComment = styled.div`
+  margin: 0;
+  display: flex;
+  max-width: 80%;
+  /* justify-content: flex-start;
+  align-items: flex-start; */
 `
 
 const StyledH4 = styled.h4`
+  margin: 4px;
   padding: 0 4px;
+  text-align: left;
 `
   
 const StyledP = styled.p`
+  margin: 4px;
   padding: 0 4px;
+  text-align: left;
 `
 
   
@@ -80,7 +84,7 @@ const commentRender = () => {
       <StyledComments className="recipe-comment">
         <h2>Comments</h2>
         {data.comments.map((comment: any) => 
-          <StyledSingleComment>
+          <StyledSingleComment key={comment.id}>
             <StyledH4>{comment.name}:</StyledH4>
             <StyledP>{comment.comment}</StyledP>
           </StyledSingleComment>

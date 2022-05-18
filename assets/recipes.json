@@ -52,9 +52,15 @@
         {"instruction":"Servera med ris, créme fraiche, färsk persilja, rivet citronskal och tortillabröd","prio":{"$numberInt":"6"}}
       ],
     "comments":[
-        {"comment":"Som att vara på semester","name":"Börje"},
-        {"comment":"Perfekt med en pilsner till","name":"Billy"},
-        {"comment":"Man blir oerhört varm","name":"Sören"}
+        {"id":"1", 
+          "comment":"Som att vara på semester",
+          "name":"Börje"},
+        {"id":"2", 
+          "comment":"Perfekt med en pilsner till",
+          "name":"Billy"},
+        {"id":"3", 
+          "comment":"Man blir oerhört varm",
+          "name":"Sören"}
       ]
   },
 
@@ -103,9 +109,15 @@
         {"instruction":"Lägg på köttet med ostskivan och önskad mängd dressing.","prio":{"$numberInt":"4"}}
       ],
     "comments":[
-        {"comment":"Jag brukar stå bredvid och hjälpa till","name":"Andreas Dahl"},
-        {"comment":"Perfekt med en pilsner till","name":"Billy"},
-        {"comment":"Inget går upp emot Börjes härliga bÖRJare","name":"Sören"}
+        {"id":"1", 
+          "comment":"Jag brukar stå bredvid och hjälpa till",
+          "name":"Andreas Dahl"},
+        {"id":"2", 
+          "comment":"Perfekt med en pilsner till",
+          "name":"Billy"},
+        {"id":"3", 
+          "comment":"Inget går upp emot Börjes härliga bÖRJare",
+          "name":"Sören"}
       ]
   },
 
@@ -159,10 +171,18 @@
         {"instruction":"När osten har smält är det klart. Servera klyftpotatis till.","prio":{"$numberInt":"6"}}
       ],
     "comments":[
-        {"comment":"En sann favorit. Gör alltid denna till lite finare tillställningar","name":"Börje"},
-        {"comment":"Perfekt med en pilsner till","name":"Billy"},
-        {"comment":"Känns som om man är på gala","name":"Simon"},
-        {"comment":"Lagade detta och nu tror min fru att jag kan laga mat och vill att jag ska göra det oftare. Gott, men fundera noga innan","name":"Sören"}
+        {"id":"1", 
+          "comment":"En sann favorit. Gör alltid denna till lite finare tillställningar",
+          "name":"Börje"},
+        {"id":"2",
+          "comment":"Perfekt med en pilsner till",
+          "name":"Billy"},
+        {"id":"3",
+          "comment":"Känns som om man är på gala",
+          "name":"Simon"},
+        {"id":"4",
+          "comment":"Lagade detta och nu tror min fru att jag kan laga mat och vill att jag ska göra det oftare. Gott, men fundera noga innan",
+          "name":"Sören"}
       ]
   }
 ]
