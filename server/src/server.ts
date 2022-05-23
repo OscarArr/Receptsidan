@@ -8,7 +8,7 @@ import categoryRouter from './routes/category'
 
 
 const app = express()
-const port = 4000;
+const port = 4000 || process.env.PORT;
 dotenv.config()
 
 const url = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@recipedb.xipac.mongodb.net/RecipeDB?retryWrites=true&w=majority`;
