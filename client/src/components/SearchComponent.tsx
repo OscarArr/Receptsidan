@@ -5,32 +5,15 @@ import {
 } from 'react-router-dom'
 import styled from 'styled-components'
 
+
+const StyledSearch = styled.form`
+display: flex;
+width: 90%;
+margin: auto;
+margin-top: 10px;
+`
+
 const SearchBar = (props: any) => {
-
-  // const [query, setQuery] = useState("");
-  
-  // const handleSubmit = (event: any) => {
-  //   // 👇️ prevent page refresh
-  //   event.preventDefault();
-
-  //   console.log('form submitted ✅');
-  // };
-
-  // onChange={(e) => setQuery((e.target as any).value)}
-
-  const StyledSearch = styled.form`
-    display: flex;
-    width: 90%;
-    margin: auto;
-    margin-top: 10px;
-  `
-
-
-  // OBS!!
-  // använd useParams istället
-
-  // const params = useParams()
-  // console.log("search component params", params)
 
   const location = () => {
     if (props.location.split("/")[1] === "categories"){

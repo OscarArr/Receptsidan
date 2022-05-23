@@ -32,9 +32,11 @@ app.use('/recipes', recipeRouter)
 app.use('/categories', categoryRouter)
 // app.use('/category/recepies', categoryRouter)
 
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!')
+  res.send('/recipes for all recipes. /categories for all categories.')
 })
 
 app.listen(port, () => {

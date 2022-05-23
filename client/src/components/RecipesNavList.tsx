@@ -58,22 +58,18 @@ const NavList = (props: any) => {
   // }
 
   const getPrintType = () => {
-
-    // if (
-    //   // currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/"
-    //   props.category
-    //   ) {
-    //   return (navLinks.map((link: any) => 
-    //     <li key={link} onClick={() => setShowNavLinks(!showNavLinks)}>
-    //       <Link to={`/categories/${link}/recipes`}>{link}</Link>
-    //     </li>
-    //   ))
-    // } else if (currentLocation.pathname === "/recipes" || currentLocation.pathname === "/recipes/") 
-    // {
-        return (navLinks.map((link: any) => <li key={link._id} >
-          <Link to={`${currentLocation.pathname}/${link._id}`}>{link.title}</Link> 
-        </li> ))
-    // } 
+    const location = currentLocation.pathname.split("/")
+    // console.log("location", location)
+    if (location[1] === "categories" ) {
+      return (navLinks.map((link: any) => <li key={link._id} >
+      <Link to={`categories/${location[2]}/recipes/${link._id}`}>{link.title}</Link> 
+      </li> ))
+    } else if (location[1] === "recipes") 
+    {
+      return (navLinks.map((link: any) => <li key={link._id} >
+        <Link to={`recipes/${link._id}`}>{link.title}</Link> 
+      </li> ))
+    } 
   }
   const ListItem: any = getPrintType()
   // console.log("ListItem", ListItem)
