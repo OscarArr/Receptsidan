@@ -1,15 +1,17 @@
 import express, { Request, Response, json } from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
+import dotenv from 'dotenv'
 
 import recipeRouter from './routes/recipe'
 import categoryRouter from './routes/category'
 
 
 const app = express()
+const port = 4000;
+dotenv.config()
 
-
-const url = `mongodb+srv://OscarArr:KalasFest12@recipedb.xipac.mongodb.net/RecipeDB?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@recipedb.xipac.mongodb.net/RecipeDB?retryWrites=true&w=majority`;
 
 mongoose.connect(url)
     .then( () => {
@@ -23,19 +25,18 @@ mongoose.connect(url)
 
 app.use(cors());
 app.use(json());
-const port = 4000;
 
 
 // Routers
 app.use('/recipes', recipeRouter)
-app.use('/id', recipeRouter)
 app.use('/categories', categoryRouter)
-app.use('/category', categoryRouter)
 // app.use('/category/recepies', categoryRouter)
 
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!')
+  res.send('/recipes for all recipes. /categories for all categories.')
 })
 
 app.listen(port, () => {

@@ -1,0 +1,188 @@
+[
+  {
+    "title":"Mustig mexikansk gryta",
+    "description":"En kryddig biffgryta. Några av killarna pillar bort bönorna och det är ju lite synd. Men när det gäller söderbönor, då är det inga problem. Oj oj, det är mycket jag får reda på när de kommer in i köket och vill småprata lite. Jag blir nästan lite generad när jag tänker på det...",
+    "imageUrl":"mexikanskgrytan.jpg",
+    "timeInMins":{
+      "$numberInt":"120"
+    },
+    "servings":{
+      "$numberInt":"4"
+    },
+    "ratings":[
+        {"$numberInt":"4"},
+        {"$numberInt":"2"},
+        {"$numberInt":"1"},
+        {"$numberInt":"5"},
+        {"$numberInt":"4"},
+        {"$numberInt":"5"},
+        {"$numberInt":"3"},
+        {"$numberInt":"2"},
+        {"$numberInt":"2"},
+        {"$numberInt":"3"},
+        {"$numberInt":"1"}
+      ],
+    "category":[
+      "Grytor",
+      "Mexikanskt",
+      "Biff",
+      "Mustigt"
+    ],
+    "ingredients":[
+        {"ingredient":"ryggbiff","amount":{"$numberInt":"600"},"unit":"g"},
+        {"ingredient":"röd chilli","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"rödlök","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"cocktailtomater","amount":{"$numberInt":"15"},"unit":"st"},
+        {"ingredient":"salladslökar","amount":{"$numberInt":"6"},"unit":"st"},
+        {"ingredient":"kidneybönor","amount":{"$numberInt":"1"},"unit":"burk"},
+        {"ingredient":"chilipulver","amount":{"$numberInt":"1"},"unit":"msk"},
+        {"ingredient":"jalapenos","amount":{"$numberInt":"4"},"unit":"msk"},
+        {"ingredient":"citron, inkl. skal","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"ris","amount":{"$numberInt":"4"},"unit":"port"},
+        {"ingredient":"persilja","amount":{"$numberInt":"1"},"unit":"efter smak"},
+        {"ingredient":"lätt créme fraiche","amount":{"$numberInt":"1"},"unit":"burk"},
+        {"ingredient":"tortillabröd","amount":{"$numberInt":"4"},"unit":"port"}
+      ],
+      "instructions":[
+        {"instruction":"Skär köttet och grönsakerna i mindre bitar.","prio":{"$numberInt":"1"}},
+        {"instruction":"Stek köttet snabbt i lite olja.","prio":{"$numberInt":"2"}},
+        {"instruction":"Lägg i bitarna av tomat, lök, jalapenos och cilifrukt","prio":{"$numberInt":"3"}},
+        {"instruction":"Fräs under omrörning. Smaka av med chilipulver","prio":{"$numberInt":"4"}},
+        {"instruction":"Häll bort vattnet från bönorna och lägg i.","prio":{"$numberInt":"5"}},
+        {"instruction":"Servera med ris, créme fraiche, färsk persilja, rivet citronskal och tortillabröd","prio":{"$numberInt":"6"}}
+      ],
+    "comments":[
+        {"id":"1", 
+          "comment":"Som att vara på semester",
+          "name":"Börje"},
+        {"id":"2", 
+          "comment":"Perfekt med en pilsner till",
+          "name":"Billy"},
+        {"id":"3", 
+          "comment":"Man blir oerhört varm",
+          "name":"Sören"}
+      ]
+  },
+
+  {
+    "title":"Börjes börjare",
+    "description":"Det enkla är ofta det goda! När grilldoft sprids under träningen vet de att Börje står vid grillarna på andra sidan huset och vänder burgare till en hel armé. Då ökar spelarna takten sista kvarten och kör extra hårt.",
+    "imageUrl":"börjesbörjare.jpg",
+    "timeInMins":{
+      "$numberInt":"30"
+    },
+    "servings":{
+      "$numberInt":"4"
+    },
+    "ratings":[
+        {"$numberInt":"4"},
+        {"$numberInt":"2"},
+        {"$numberInt":"1"},
+        {"$numberInt":"5"},
+        {"$numberInt":"4"},
+        {"$numberInt":"5"},
+        {"$numberInt":"3"},
+        {"$numberInt":"2"},
+        {"$numberInt":"2"},
+        {"$numberInt":"3"},
+        {"$numberInt":"1"}
+      ],
+    "category":[
+      "Hamburgare",
+      "Amerikanskt",
+      "Biff",
+      "Snabbt"
+    ],
+    "ingredients":[
+        {"ingredient":"hamburgare","amount":{"$numberInt":"4"},"unit":"st"},
+        {"ingredient":"bröd","amount":{"$numberInt":"4"},"unit":"st"},
+        {"ingredient":"tomat","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"cheddarost","amount":{"$numberInt":"4"},"unit":"skivor"},
+        {"ingredient":"salladsblad","amount":{"$numberInt":"4"},"unit":"port"},
+        {"ingredient":"saltgurka","amount":{"$numberInt":"1"},"unit":"burk"},
+        {"ingredient":"amerikansk hamburgerdressing","amount":{"$numberInt":"1"},"unit":"tub"}
+      ],
+      "instructions":[
+        {"instruction":"Grilla hamburgarna ett par minuter på varje sida.","prio":{"$numberInt":"1"}},
+        {"instruction":"Lägg på en skiva ost på ovansidan sista minuten.","prio":{"$numberInt":"2"}},
+        {"instruction":"Fyll ett hamburgerbröd med sallad, lök och tomat","prio":{"$numberInt":"3"}},
+        {"instruction":"Lägg på köttet med ostskivan och önskad mängd dressing.","prio":{"$numberInt":"4"}}
+      ],
+    "comments":[
+        {"id":"1", 
+          "comment":"Jag brukar stå bredvid och hjälpa till",
+          "name":"Andreas Dahl"},
+        {"id":"2", 
+          "comment":"Perfekt med en pilsner till",
+          "name":"Billy"},
+        {"id":"3", 
+          "comment":"Inget går upp emot Börjes härliga bÖRJare",
+          "name":"Sören"}
+      ]
+  },
+
+  {
+    "title":"Ädel gryta med konjak",
+    "description":"Jag fräser svampen bredvid och lägger på i efterhand - så behållar kantarellerna sin spänstighet.",
+    "imageUrl":"ädelgrytakonjak.jpg",
+    "timeInMins":{
+      "$numberInt":"45"
+    },
+    "servings":{
+      "$numberInt":"4"
+    },
+    "ratings":[
+        {"$numberInt":"4"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"},
+        {"$numberInt":"4"},
+        {"$numberInt":"5"},
+        {"$numberInt":"3"},
+        {"$numberInt":"4"},
+        {"$numberInt":"4"},
+        {"$numberInt":"5"},
+        {"$numberInt":"2"}
+      ],
+    "category":[
+      "Grytor",
+      "Lyxigt",
+      "Svamp",
+      "Mustigt"
+    ],
+    "ingredients":[
+        {"ingredient":"fläskfilé","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"bacon","amount":{"$numberInt":"1"},"unit":"pkt"},
+        {"ingredient":"färska kantareller","amount":{"$numberInt":"2"},"unit":"nävar"},
+        {"ingredient":"gul lök","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"matlagningsgrädde","amount":{"$numberInt":"3"},"unit":"dl"},
+        {"ingredient":"konjak","amount":{"$numberInt":"1"},"unit":"msk"},
+        {"ingredient":"kalvfond","amount":{"$numberInt":"1"},"unit":"msk"},
+        {"ingredient":"dijonsenap","amount":{"$numberInt":"1"},"unit":"msk"},
+        {"ingredient":"ädelost","amount":{"$numberInt":"150"},"unit":"g"},
+        {"ingredient":"klyftpotatis","amount":{"$numberInt":"4"},"unit":"port"}
+      ],
+      "instructions":[
+        {"instruction":"Skär fläskfilén i lagom stora munsbitar.","prio":{"$numberInt":"1"}},
+        {"instruction":"Bryn bitarna tillsammans med bacon och lök i en gryta.","prio":{"$numberInt":"2"}},
+        {"instruction":"Häll på grädde, konjak och kalvfond","prio":{"$numberInt":"3"}},
+        {"instruction":"Rör om och låt småputtra.","prio":{"$numberInt":"4"}},
+        {"instruction":"Klicka i dijonsenap och ädelost.","prio":{"$numberInt":"5"}},
+        {"instruction":"När osten har smält är det klart. Servera klyftpotatis till.","prio":{"$numberInt":"6"}}
+      ],
+    "comments":[
+        {"id":"1", 
+          "comment":"En sann favorit. Gör alltid denna till lite finare tillställningar",
+          "name":"Börje"},
+        {"id":"2",
+          "comment":"Perfekt med en pilsner till",
+          "name":"Billy"},
+        {"id":"3",
+          "comment":"Känns som om man är på gala",
+          "name":"Simon"},
+        {"id":"4",
+          "comment":"Lagade detta och nu tror min fru att jag kan laga mat och vill att jag ska göra det oftare. Gott, men fundera noga innan",
+          "name":"Sören"}
+      ]
+  }
+]
