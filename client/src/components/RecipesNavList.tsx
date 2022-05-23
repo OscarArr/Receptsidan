@@ -28,20 +28,20 @@ const NavList = (props: any) => {
     }
   }
   
+  const Links = async () => {
+    if(currentLocation.search !== "") {
+      const navLinks = await getFetch(fetchUrl() + currentLocation.search) 
+      setNavLinks(navLinks)
+    } else {
+    const navLinks = await getFetch(fetchUrl())  
+    setNavLinks(navLinks)
+    }
+  }
 
   useEffect(() => {
-    const Links = async () => {
-      if(currentLocation.search !== "") {
-        const navLinks = await getFetch(fetchUrl() + currentLocation.search) 
-        setNavLinks(navLinks)
-      } else {
-      const navLinks = await getFetch(fetchUrl())  
-      setNavLinks(navLinks)
-      }
-    }
     Links()
 
-  }, [currentLocation.search])
+  }, [])
 
 
 
