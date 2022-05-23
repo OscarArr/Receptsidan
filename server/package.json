@@ -23,7 +23,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/cors": "^2.8.12",
     "nodemon": "^2.0.16"
   }
 }
