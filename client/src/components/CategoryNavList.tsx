@@ -1,17 +1,15 @@
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   useLocation,
-  Route,
-  Link,
-  useParams
+  Link
 } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import getFetch from '../api/apiFetch'
-import NavList from './RecipesNavList'
-import RecipeLink from './RecipeLink'
+// import NavList from './RecipesNavList'
+// import RecipeLink from './RecipeLink'
 
 const CategoryNavList = (props: any) => {
-  const [showNavLinks, setShowNavLinks] = useState(false);
+  // const [showNavLinks, setShowNavLinks] = useState(false);
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()

@@ -1,15 +1,13 @@
 import {
-  BrowserRouter as Router,
-  useLocation,
-  Route,
-  Link,
-  useParams
+  // BrowserRouter as Router,
+  useLocation
+  // Route,
+  // Link,
+  // useParams
 } from 'react-router-dom'
-import { useEffect, useState } from "react";
 import SearchBar from './SearchComponent';
 import NavList from './RecipesNavList'
 import CategoryNavList from './CategoryNavList'
-import RecipeLink from './RecipeLink';
 import NavButton from "./NavButton"
 import styled from 'styled-components';
 
@@ -37,7 +35,7 @@ const SideBarNav = () => {
   // const [showCategories, setShowCategories] = useState(false);
   // const [showRecipes, setShowRecipes] = useState(false);
   
-  const [query, setQuery] = useState("");
+  // const [query, setQuery] = useState("");
   
   const chooseRender = () => {
     if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {

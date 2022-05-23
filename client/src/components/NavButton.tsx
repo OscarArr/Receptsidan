@@ -1,9 +1,9 @@
 import {
-  BrowserRouter as Router,
-  useLocation,
-  Route,
-  Link,
-  useParams
+  // BrowserRouter as Router,
+  // useLocation,
+  // Route,
+  Link
+  // useParams
 } from 'react-router-dom'
 import styled from 'styled-components'
 

@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  useLocation,
-  Route,
-  Link,
-  useParams
-} from 'react-router-dom'
-import getFetch from '../api/apiFetch'
+import { useEffect } from "react";
+// import {
+//   // BrowserRouter as Router,
+//   useLocation,
+//   // Route,
+//   // Link,
+//   useParams
+// } from 'react-router-dom'
+// import getFetch from '../api/apiFetch'
 import styled from "styled-components";
-import image from "../../assets/images/ädelgrytakonjak.jpg";
+// import image from "../../assets/images/ädelgrytakonjak.jpg";
 
 const StyledRecipeCard = styled.section`
   min-width: 400px;
@@ -113,8 +113,8 @@ const RecipeCard = (props: any) => {
 
   // const [recipeData, setRecipeData] = useState<any[]>([]);
   
-  const currentLocation = useLocation()
-  const params = useParams()
+  // const currentLocation = useLocation()
+  // const params = useParams()
   // console.log("useParams", useParams())
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const RecipeCard = (props: any) => {
         <StyledRecipeCard className="recipe-card">
           <StyledTitle>{data.title}</StyledTitle>
             <StyledDescription>{data.description}</StyledDescription>
-            <StyledPicture src={`http://localhost:4000/images/${data.imageUrl}`} alt={data.title} />
+            <StyledPicture src={`${process.env.REACT_APP_API_BASE_URL}/images/${data.imageUrl}`} alt={data.title} />
           <StyledInfo>
             <StyledInfoChild>{data.timeInMins} minuter</StyledInfoChild>
             <StyledInfoChild>portioner: {data.servings}</StyledInfoChild>

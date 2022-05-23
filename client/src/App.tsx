@@ -1,7 +1,6 @@
 import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import SideBarNav from './components/SideBarNav';
-import RecipeCard from './components/RecipeCard';
 import styled from 'styled-components';
 import RecipeView from './components/RecipeView';
 

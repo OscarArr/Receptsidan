@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import {
-  useLocation,
-  useParams
+  useLocation
+  // useParams
 } from 'react-router-dom'
 import styled from 'styled-components'
 

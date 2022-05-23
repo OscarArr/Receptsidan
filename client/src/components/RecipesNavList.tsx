@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   useLocation,
   Link,
-  useParams
+  // useParams
 } from 'react-router-dom'
 import getFetch from '../api/apiFetch'
 
