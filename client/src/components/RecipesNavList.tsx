@@ -41,7 +41,7 @@ const NavList = (props: any) => {
     }
     Links()
 
-  }, [currentLocation.search, fetchUrl])
+  }, [currentLocation.search])
 
 
 
