@@ -41,7 +41,7 @@ const NavList = (props: any) => {
   useEffect(() => {
     Links()
 
-  }, [])
+  }, [Links])
 
 
 
