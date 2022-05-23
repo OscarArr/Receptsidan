@@ -23,7 +23,7 @@ const CategoryNavList = (props: any) => {
     }
     Links()
 
-  }, [])
+  }, [currentLocation.pathname])
 
   // const getRecipesByCategory = async () => {
   //   const recipeLinks = await getFetch(currentLocation.pathname + "/recipes")

@@ -131,19 +131,21 @@ const RecipeCard = (props: any) => {
       return (
         <StyledRecipeCard className="recipe-card">
           <StyledTitle>{data.title}</StyledTitle>
+          <StyledContainer>
             <StyledDescription>{data.description}</StyledDescription>
             <StyledPicture src={`${process.env.REACT_APP_API_BASE_URL}/images/${data.imageUrl}`} alt={data.title} />
-          <StyledInfo>
-            <StyledInfoChild>{data.timeInMins} minuter</StyledInfoChild>
-            <StyledInfoChild>portioner: {data.servings}</StyledInfoChild>
-            <StyledInfoChild>Snittbetyg: {Math.round(data.ratings.reduce((acc: any, curr: any) => acc + curr, 0) / data.ratings.length)}
-            </StyledInfoChild>
-            <StyledCategories>
-              {data.category.map((cat: string) => 
-                <li key={cat}>{cat}</li>
-              )}
-            </StyledCategories>
-          </StyledInfo>
+            <StyledInfo>
+              <StyledInfoChild>{data.timeInMins} minuter</StyledInfoChild>
+              <StyledInfoChild>portioner: {data.servings}</StyledInfoChild>
+              <StyledInfoChild>Snittbetyg: {Math.round(data.ratings.reduce((acc: any, curr: any) => acc + curr, 0) / data.ratings.length)}
+              </StyledInfoChild>
+              <StyledCategories>
+                {data.category.map((cat: string) => 
+                  <li key={cat}>{cat}</li>
+                )}
+              </StyledCategories>
+            </StyledInfo>
+          </StyledContainer>
           <StyledIngredients className="ingredients">
             {data.ingredients.map((ingredient: any) => 
               <li key={ingredient.ingredient}>{ingredient.amount} {ingredient.unit} {ingredient.ingredient}</li>

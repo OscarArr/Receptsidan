@@ -31,7 +31,7 @@ const NavList = (props: any) => {
 
   useEffect(() => {
     const Links = async () => {
-      if(currentLocation.search != "") {
+      if(currentLocation.search !== "") {
         const navLinks = await getFetch(fetchUrl() + currentLocation.search) 
         setNavLinks(navLinks)
       } else {
@@ -41,7 +41,7 @@ const NavList = (props: any) => {
     }
     Links()
 
-  }, [])
+  }, [currentLocation.search, fetchUrl])
 
 
 

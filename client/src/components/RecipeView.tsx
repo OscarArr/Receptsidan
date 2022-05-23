@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {
   // BrowserRouter as Router,
-  useLocation,
+  // useLocation,
   // Route,
   // Link,
   useParams
@@ -11,24 +11,24 @@ import styled from "styled-components";
 import RecipeCard from './RecipeCard'
 
 
-const StyledRecipeCard = styled.section`
-  min-width: 400px;
-  min-height: 600px;
-  max-height: 800px;
-  background-color: green;
-  color: white;
-  margin: 20px;
-  padding: 20px;
-  display: grid;
-  grid-template-areas: 
-    "StyledTitle StyledTitle StyledTitle"
-    "StyledPicture StyledPicture StyledPicture"
-    "StyledDescription StyledDescription StyledDescription"
-    "StyledInfo StyledInfo StyledInfo"
-    "StyledIngredients StyledInstructions StyledInstructions"
-    "StyledIngredients StyledInstructions StyledInstructions"
-  ;
-`
+// const StyledRecipeCard = styled.section`
+//   min-width: 400px;
+//   min-height: 600px;
+//   max-height: 800px;
+//   background-color: green;
+//   color: white;
+//   margin: 20px;
+//   padding: 20px;
+//   display: grid;
+//   grid-template-areas: 
+//     "StyledTitle StyledTitle StyledTitle"
+//     "StyledPicture StyledPicture StyledPicture"
+//     "StyledDescription StyledDescription StyledDescription"
+//     "StyledInfo StyledInfo StyledInfo"
+//     "StyledIngredients StyledInstructions StyledInstructions"
+//     "StyledIngredients StyledInstructions StyledInstructions"
+//   ;
+// `
 const StyledComments = styled.div`
   margin: 20px;
   padding: 20px;
@@ -64,7 +64,7 @@ const RecipeView = (props: any) => {
 
   const [recipeData, setRecipeData] = useState<any[]>([]);
   
-  const currentLocation = useLocation()
+  // const currentLocation = useLocation()
   const params = useParams()
 
   useEffect(() => {
@@ -74,7 +74,7 @@ const RecipeView = (props: any) => {
       setRecipeData(recipe)
     }
     getRecipeData()
-  }, [])
+  }, [params.id])
 
   
   const commentRender = () => {
