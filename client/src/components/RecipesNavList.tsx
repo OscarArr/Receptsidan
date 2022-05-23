@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   useLocation,
-  // Route,
   Link,
   useParams
 } from 'react-router-dom'
@@ -10,13 +9,11 @@ import getFetch from '../api/apiFetch'
 
 
 const NavList = (props: any) => {
-  // const [showNavLinks, setShowNavLinks] = useState(false);
+
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()
-  
-  // console.log("navList location recipeID", currentLocation.pathname)
-  // console.log("navList location split", currentLocation.pathname.split("/"))
+
 
   const fetchUrl = () => {
     const links = currentLocation.pathname.split("/")
@@ -41,25 +38,15 @@ const NavList = (props: any) => {
       const navLinks = await getFetch(fetchUrl())  
       setNavLinks(navLinks)
       }
-      // setNavLinks(navLinks)
     }
     Links()
 
   }, [])
 
-  // const handleClick = () => {
-  //   setShowNavLinks(!showNavLinks);
-  //   const recipeLinks = () => {
-  //     return (navLinks.map((link: any) => <li key={link._id} >
-  //         <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
-  //       </li> ))
-  //   }
-  //   console.log(recipeLinks())
-  // }
+
 
   const getPrintType = () => {
     const location = currentLocation.pathname.split("/")
-    // console.log("location", location)
     if (location[1] === "categories" ) {
       return (navLinks.map((link: any) => <li key={link._id} >
       <Link to={`categories/${location[2]}/recipes/${link._id}`}>{link.title}</Link> 
@@ -72,18 +59,12 @@ const NavList = (props: any) => {
     } 
   }
   const ListItem: any = getPrintType()
-  // console.log("ListItem", ListItem)
+
 
   
   return (
     < >
       {ListItem}
-      {/* {navLinks.map((link: any) => <li key={link._id} >
-          <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
-        </li> )} */}
-      {/* {navLinks.map((link: any) => <li key={link} >
-          <Link to={`/${link}`}>{link}</Link> 
-        </li> )} */}
     </>
   )
 }
