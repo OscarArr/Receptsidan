@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import SideBarNav from './components/SideBarNav';
 import styled from 'styled-components';
 import RecipeView from './components/RecipeView';
+import RecipeList from './components/RecipeListview';
 
 
 const StyledApp = styled.div`
@@ -20,6 +21,9 @@ const App = () => {
       <BrowserRouter>
       <SideBarNav />
       <Routes>
+        <Route path="/" element={<RecipeList />} >
+          {/* <RecipeCard /> */}
+        </Route>
         <Route path="/recipes/:id" element={<RecipeView />} >
           {/* <RecipeCard /> */}
         </Route>

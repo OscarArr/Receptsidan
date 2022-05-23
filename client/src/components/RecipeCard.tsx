@@ -22,15 +22,13 @@ const StyledRecipeCard = styled.section`
   grid-template-areas: 
     "StyledTitle StyledTitle StyledTitle"
     "StyledContainer StyledPicture StyledPicture"
-    "StyledContainer StyledPicture StyledPicture"
-    /* "StyledInfo StyledInfo StyledInfo" */
-    "StyledIngredients StyledInstructions StyledInstructions"
-    "StyledIngredients StyledInstructions StyledInstructions"
+    "StyledIngredients StyledPicture StyledPicture"
+    "StyledInstructions StyledInstructions StyledInstructions"
   ;
 `
 const StyledTitle = styled.h1`
   grid-area: StyledTitle;
-
+  font-size: 2rem;
 `
   
 const StyledPicture = styled.img`
@@ -43,8 +41,9 @@ const StyledPicture = styled.img`
 
 const StyledContainer = styled.div`
   display: flex;
+  flex-direction: column;
   /* justify-content: space-evenly; */
-  width: 100%;
+  /* width: 100%; */
 `
 
   const StyledDescription = styled.h4`
@@ -57,11 +56,11 @@ const StyledContainer = styled.div`
 
   const StyledInfo = styled.div`
     /* grid-area: StyledInfo; */
-    align-self: flex-end;
+    /* align-self: flex-end; */
     border: 1px solid white;
     display: flex;
     flex-direction: column;
-    margin: 10px 10px 10px 0;
+    margin: auto 10px 10px 0;
     padding: 10px 0;
     /* width: 100%; */
     max-height: 5rem;
@@ -92,7 +91,7 @@ const StyledIngredients = styled.ul`
   border: 1px solid white;
   display: flex;
   flex-direction: column;
-  margin: 0 10px 0 0;
+  margin: 0 10px 10px 0;
   padding: 16px 24px 16px 32px;
   text-align: left;
   /* width: 70%; */
@@ -133,7 +132,6 @@ const RecipeCard = (props: any) => {
           <StyledTitle>{data.title}</StyledTitle>
           <StyledContainer>
             <StyledDescription>{data.description}</StyledDescription>
-            <StyledPicture src={`${process.env.REACT_APP_API_BASE_URL}/images/${data.imageUrl}`} alt={data.title} />
             <StyledInfo>
               <StyledInfoChild>{data.timeInMins} minuter</StyledInfoChild>
               <StyledInfoChild>portioner: {data.servings}</StyledInfoChild>
@@ -142,10 +140,11 @@ const RecipeCard = (props: any) => {
               <StyledCategories>
                 {data.category.map((cat: string) => 
                   <li key={cat}>{cat}</li>
-                )}
+                  )}
               </StyledCategories>
             </StyledInfo>
           </StyledContainer>
+          <StyledPicture src={`${process.env.REACT_APP_API_BASE_URL}/images/${data.imageUrl}`} alt={data.title} />
           <StyledIngredients className="ingredients">
             {data.ingredients.map((ingredient: any) => 
               <li key={ingredient.ingredient}>{ingredient.amount} {ingredient.unit} {ingredient.ingredient}</li>

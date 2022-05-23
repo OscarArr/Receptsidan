@@ -24,7 +24,7 @@ const SideBarNavStyled = styled.section`
   flex-direction: column;
   width: 20%;
   max-width: 400px;
-  min-width: 300px;
+  min-width: 250px;
   background-color: #f5f5f5;
   height: 100vh;
 `
@@ -32,18 +32,10 @@ const SideBarNavStyled = styled.section`
 
 const SideBarNav = () => {
   const currentLocation = useLocation()
-  // const [showCategories, setShowCategories] = useState(false);
-  // const [showRecipes, setShowRecipes] = useState(false);
-  
-  // const [query, setQuery] = useState("");
-  
   const chooseRender = () => {
     if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
       return (<CategoryNavList />)
     } 
-    // else if (currentLocation.pathname.includes("/cagegories") && currentLocation.pathname.includes("/recipes")) {
-    //   return (<RecipeLink />)
-    // } 
     else if (currentLocation.pathname.includes("/recipes")) {
       return (<NavList />)
     }

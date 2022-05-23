@@ -6,7 +6,16 @@ import {
   // useParams
 } from 'react-router-dom'
 import getFetch from '../api/apiFetch'
+import styled from "styled-components";
 
+
+const StyledRecipeList = styled.ul`
+  margin: 0;
+`
+
+const StyledTitle = styled.h4`
+  margin: 16px 0 0 16px;
+`
 
 const NavList = (props: any) => {
 
@@ -43,7 +52,14 @@ const NavList = (props: any) => {
 
   }, [currentLocation.search])
 
-
+  const location = () => {
+    if (currentLocation.pathname.split("/")[1] === "categories" && currentLocation.pathname.split("/")[2]) {
+      return (`Recipes in category ${currentLocation.pathname.split("/")[2]}:`)
+    }
+    else if(currentLocation.pathname.includes("/recipes") || currentLocation.pathname === "/"){
+      return "recipes:"
+    } 
+  }
 
   const getPrintType = () => {
     const location = currentLocation.pathname.split("/")
@@ -63,8 +79,11 @@ const NavList = (props: any) => {
 
   
   return (
-    < >
-      {ListItem}
+    <>
+      <StyledTitle>{location()}</StyledTitle>
+      <StyledRecipeList>
+        {ListItem}
+      </StyledRecipeList>
     </>
   )
 }

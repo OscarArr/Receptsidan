@@ -1,38 +1,46 @@
 // import { useEffect, useState } from "react";
 import {
-  useLocation
+  useLocation,
+  useNavigate
   // useParams
 } from 'react-router-dom'
 import styled from 'styled-components'
 
 
 const StyledSearch = styled.form`
-display: flex;
-width: 90%;
-margin: auto;
-margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
 `
+
+const StyledLabel = styled.label`
+  width: 100%;
+  font-weight: 600;
+`
+
 
 const SearchBar = (props: any) => {
 
   const location = () => {
-    if (props.location.split("/")[1] === "categories"){
+    if (props.location.split("/")[1] === "categories" && props.location.split("/")[2]) {
       return (`category ${props.location.split("/")[2]}`)
+    }
+    else if (props.location.split("/")[1] === "categories"){
+      return (`your heart for love and gold`)
     }
     else if(props.location.includes("/recipes") || props.location === "/"){
       return "recipes"
     } 
-    if (props.location.split("/")[1] === "categories"){
-      return (`category ${props.location.split("/")[2]}`)
-    }
   }
   
 
     return (
-      <StyledSearch  action={useLocation().pathname} method="get">
-        <label htmlFor="header-search">
+      <StyledSearch onSubmit={(e) => e.preventDefault()} action={useLocation().pathname} method="get">
+        <StyledLabel htmlFor="header-search">
           search in {location()}
-        </label>
+        </StyledLabel>
         <input 
             type="text"
             id="header-search"
