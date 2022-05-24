@@ -1,9 +1,5 @@
 import {
-  // BrowserRouter as Router,
   useLocation
-  // Route,
-  // Link,
-  // useParams
 } from 'react-router-dom'
 import SearchBar from './SearchComponent';
 import NavList from './RecipesNavList'
@@ -17,6 +13,7 @@ const StyledButtonContainer = styled.div`
   justify-content: space-around;
   width: 100%;
   flex-wrap: wrap;
+  margin-top: 10px;
 `
 
 const SideBarNavStyled = styled.section`
@@ -24,27 +21,20 @@ const SideBarNavStyled = styled.section`
   flex-direction: column;
   width: 20%;
   max-width: 400px;
-  min-width: 300px;
-  background-color: #f5f5f5;
+  min-width: 250px;
+  background-color: white;
   height: 100vh;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
 `
 
 
 const SideBarNav = () => {
   const currentLocation = useLocation()
-  // const [showCategories, setShowCategories] = useState(false);
-  // const [showRecipes, setShowRecipes] = useState(false);
-  
-  // const [query, setQuery] = useState("");
-  
   const chooseRender = () => {
     if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
       return (<CategoryNavList />)
     } 
-    // else if (currentLocation.pathname.includes("/cagegories") && currentLocation.pathname.includes("/recipes")) {
-    //   return (<RecipeLink />)
-    // } 
-    else if (currentLocation.pathname.includes("/recipes")) {
+    else if (currentLocation.pathname.includes("/recipes") || currentLocation.pathname === "/") {
       return (<NavList />)
     }
   }

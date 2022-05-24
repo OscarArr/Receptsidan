@@ -2,18 +2,38 @@ import { useState, useEffect } from "react";
 import {
   // BrowserRouter as Router,
   useLocation,
-  Link,
+  Link
   // useParams
 } from 'react-router-dom'
 import getFetch from '../api/apiFetch'
+import styled from "styled-components";
 
+
+const StyledRecipeList = styled.ul`
+  margin: 0;
+
+  a{
+    text-decoration: none;
+    color: #016801;
+
+      &:hover{
+        font-weight: 650;
+      }
+   }
+`
+
+const StyledTitle = styled.h4`
+  margin: 16px 0 0 16px;
+  color: #016801;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+`
 
 const NavList = (props: any) => {
 
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()
-
 
   const fetchUrl = () => {
     const links = currentLocation.pathname.split("/")
@@ -23,27 +43,38 @@ const NavList = (props: any) => {
     } else if (links.length === 3 && links[1] === "recipes") {
       links.splice(2, 1)
       return links.join("/")
+    } else if (currentLocation.pathname === "/") {
+      links.join("/")
+      return "/recipes"
     } else {
       return links.join("/")
     }
   }
-  
+
   const Links = async () => {
     if(currentLocation.search !== "") {
       const navLinks = await getFetch(fetchUrl() + currentLocation.search) 
       setNavLinks(navLinks)
     } else {
-    const navLinks = await getFetch(fetchUrl())  
-    setNavLinks(navLinks)
+      const navLinks = await getFetch(fetchUrl())  
+      setNavLinks(navLinks)
     }
   }
 
   useEffect(() => {
     Links()
 
-  }, [currentLocation.search])
+  }, [currentLocation.pathname])
 
 
+  const location = () => {
+    if (currentLocation.pathname.split("/")[1] === "categories" && currentLocation.pathname.split("/")[2]) {
+      return (`Recipes in category ${currentLocation.pathname.split("/")[2]}:`)
+    }
+    else if(currentLocation.pathname.includes("/recipes") || currentLocation.pathname === "/"){
+      return "recipes:"
+    } 
+  }
 
   const getPrintType = () => {
     const location = currentLocation.pathname.split("/")
@@ -63,8 +94,11 @@ const NavList = (props: any) => {
 
   
   return (
-    < >
-      {ListItem}
+    <>
+      <StyledTitle>{location()}</StyledTitle>
+      <StyledRecipeList>
+        {ListItem}
+      </StyledRecipeList>
     </>
   )
 }

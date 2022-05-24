@@ -1,20 +1,39 @@
 import {
-  // BrowserRouter as Router,
   useLocation,
   Link
 } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import getFetch from '../api/apiFetch'
-// import NavList from './RecipesNavList'
-// import RecipeLink from './RecipeLink'
+import styled from 'styled-components';
+
+
+const StyledCategoryList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+   a{
+    text-decoration: none;
+    color: #016801;
+
+      &:hover{
+        font-weight: 650;
+      }
+   }
+`
+
+const StyledTitle = styled.h4`
+  margin: 16px 0 0 16px;
+  color: #016801;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+`
+
 
 const CategoryNavList = (props: any) => {
-  // const [showNavLinks, setShowNavLinks] = useState(false);
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()
-
-  console.log("CategoryNavList")
   
   useEffect(() => {
     const Links = async () => {
@@ -25,15 +44,6 @@ const CategoryNavList = (props: any) => {
 
   }, [currentLocation.pathname])
 
-  // const getRecipesByCategory = async () => {
-  //   const recipeLinks = await getFetch(currentLocation.pathname + "/recipes")
-  //   setShowNavLinks(!showNavLinks);
-
-  // } 
-
-  // onClick={() => getRecipesByCategory()}
-  // showNavLinks && 
-
   const getCategories = () => {
     if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
       return (navLinks.map((link: any) => 
@@ -41,33 +51,18 @@ const CategoryNavList = (props: any) => {
           <Link to={`/categories/${link.name}/recipes`}>
             {link.name} ({link.count}) 
           </Link>
-          {/* {showNavLinks && <RecipeLink category={link} />}  */}
         </li>
       ))
     }
-
-
   }
-
-  // const getPrintType = () => {
-  //   if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
-  //     return (navLinks.map((link: any) => 
-  //       <li key={link} onClick={() => setShowNavLinks(!showNavLinks)}>
-  //         <Link to={`/categories/${link}/recipes`}>{link}</Link>
-  //       </li>
-  //     ))
-  //   } else if (currentLocation.pathname.includes("/recipes")) {
-  //       return (navLinks.map((link: any) => <li key={link._id} >
-  //         <Link to={`/${currentLocation.pathname} ${link._id}`}>{link.title}</Link> 
-  //       </li> ))
-  //   } 
-  // }
-  // const categoryNavLink: any = getPrintType()
     
   return (
-    <ul className="category-link">
-      {getCategories()}
-    </ul>
+    <>
+      <StyledTitle>Categories:</StyledTitle>
+      <StyledCategoryList className="category-link">
+        {getCategories()}
+      </StyledCategoryList>
+    </>
   )
   
 }
