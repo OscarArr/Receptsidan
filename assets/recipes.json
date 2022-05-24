@@ -184,5 +184,66 @@
           "comment":"Lagade detta och nu tror min fru att jag kan laga mat och vill att jag ska göra det oftare. Gott, men fundera noga innan",
           "name":"Sören"}
       ]
+  },
+  {
+    "title":"Guldmackan",
+    "description":"Under guldsäsongen 2001 laddade alla spelarna upp med räkmackor före match. Så var det plötsligt någon jäkel som påstod att räkor inte skulle vara bra för uppladdningen. Frågan gick så långt som upp till styrelsen - där man tillslut klubbade igenom beslutet att ersätta räkorna med ost och skinka. Och vi vet ju hur det gick sen... Men fortfarande får tränarna min guldmacka på matchdagen.",
+    "imageUrl":"guldmackan.jpg",
+    "timeInMins":{
+      "$numberInt":"15"
+    },
+    "servings":{
+      "$numberInt":"1"
+    },
+    "ratings":[
+        {"$numberInt":"4"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"},
+        {"$numberInt":"4"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"},
+        {"$numberInt":"5"}
+      ],
+    "category":[
+      "Guld",
+      "Skaldjur",
+      "2001",
+      "Snabbt"
+    ],
+    "ingredients":[
+        {"ingredient":"oskalade räkor","amount":{"$numberInt":"250"},"unit":"g"},
+        {"ingredient":"avlångt solrosbröd","amount":{"$numberInt":"1"},"unit":"skiva"},
+        {"ingredient":"salladsblad","amount":{"$numberInt":"2"},"unit":"st"},
+        {"ingredient":"hårdkokt ägg","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"citronskiva","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"majonnäs","amount":{"$numberInt":"1"},"unit":"msk"},
+        {"ingredient":"färsk dill","amount":{"$numberInt":"1"},"unit":"knippe"},
+        {"ingredient":"tunna gurkskivor","amount":{"$numberInt":"1"},"unit":"st"},
+        {"ingredient":"tunna tomatskivor","amount":{"$numberInt":"1"},"unit":"st"}
+      ],
+      "instructions":[
+        {"instruction":"Skala räkor","prio":{"$numberInt":"1"}},
+        {"instruction":"Bred ut majonnäs på brödskivan","prio":{"$numberInt":"2"}},
+        {"instruction":"Lägg på salladsblad","prio":{"$numberInt":"3"}},
+        {"instruction":"Skiva ägget och lägg på salladen","prio":{"$numberInt":"4"}},
+        {"instruction":"Ös över räkor","prio":{"$numberInt":"5"}},
+        {"instruction":"Dekorera med gurk- och tomatskivor, citron och dill.","prio":{"$numberInt":"6"}},
+        {"instruction":"Ringla över lite extra majonnäs på toppen","prio":{"$numberInt":"7"}}
+      ],
+    "comments":[
+        {"id":"1", 
+          "comment":"Sannolikt matchavgörande, säkert även serieavgörande!",
+          "name":"Sören"},
+        {"id":"2", 
+          "comment":"Perfekt med en pilsner till",
+          "name":"Billy"},
+        {"id":"3", 
+          "comment":"Dags för ledarstabben att visa lite kulor och ta tillbaka guldmackan. Skämt åt sidan, jättefin macka",
+          "name":"Kennedy K10"}
+      ]
   }
 ]
