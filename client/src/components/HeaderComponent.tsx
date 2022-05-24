@@ -1,43 +1,47 @@
 import {
-  // BrowserRouter as Router,
-  // useLocation
-  // Route,
   Link
-  // useParams
 } from 'react-router-dom'
-import SearchBar from './SearchComponent';
-import NavList from './RecipesNavList'
-import CategoryNavList from './CategoryNavList'
-import NavButton from "./NavButton"
+
 import styled from 'styled-components';
 
 
-const StyledButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  flex-wrap: wrap;
-`
+// const StyledHomeLink = styled.div`
+// grid-area: HeaderComponent;
+//   display: flex;
+//   justify-content: space-around;
+//   width: 100%;
+//   flex-wrap: wrap;
+// `
 
-const SideBarNavStyled = styled.section`
+const StyledHeader = styled.div`
+  grid-area: HeaderComponent;
   display: flex;
-  flex-direction: column;
-  width: 20%;
-  max-width: 400px;
-  min-width: 250px;
-  background-color: green;
-  height: 100vh;
+  width: 100vw;
+  height: 80px;
+  background-color: white;
+  margin: 0;
+  align-items: center;
+  padding: 0;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
+
+    a {
+      text-decoration: none;
+      color: #016801;
+      font-size: 4rem;
+      font-family: 'Dancing Script', cursive;
+      margin-left: 1rem;
+    }
 `
 
 
 const HeaderComponent = () => {
   
   return (
-    <div className="header">
+    <StyledHeader className="header">
       <Link to="/">
-        
+        Yvonnes mål
       </Link>
-    </div>
+    </StyledHeader>
   )
 }
 

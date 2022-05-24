@@ -8,10 +8,12 @@ const StyledRecipeCard = styled.article`
   max-width: 850px;
   /* min-height: 600px;
   max-height: 800px; */
-  background-color: green;
-  color: white;
+  background-color: white;
+  color: #016801;
   margin: 20px;
   padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
   display: grid;
   grid-template-areas: 
     "StyledTitle StyledTitle StyledPicture"
@@ -42,7 +44,7 @@ const StyledDescription = styled.h4`
 const StyledInfo = styled.div`
   grid-area: StyledInfo;
   /* align-self: flex-end; */
-  border: 1px solid white;
+  border: 1px solid #016801;
   display: flex;
   justify-content: space-evenly;
   margin: auto 10px 10px 0;

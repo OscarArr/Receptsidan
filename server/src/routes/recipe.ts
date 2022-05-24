@@ -1,5 +1,5 @@
 import express from 'express'
-import { getRecipes, getRecipeById, getRecipesByQuery } from '../db/recipe'
+import { getRecipes, getRecipeById, getRecipesByQuery,postRecipeRating } from '../db/recipe'
 
 const router = express.Router()
 
@@ -19,6 +19,11 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   const recipe = await getRecipeById(req.params.id)
   res.json(recipe)
+})
+
+router.post("/:id/ratings", async (req, res) => {
+  const postedRating = await postRecipeRating(req.params.id, req.body.rating)
+  res.status(200).json(postedRating)
 })
 
 export default router

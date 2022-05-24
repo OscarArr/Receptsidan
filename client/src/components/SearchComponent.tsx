@@ -18,7 +18,7 @@ const StyledSearch = styled.form`
 const StyledLabel = styled.label`
   width: 100%;
   font-weight: 600;
-  color: white;
+  color: #016801;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 `
 
@@ -39,13 +39,13 @@ const SearchBar = (props: any) => {
 
   const addSearchQuery= (targetValue: string) => {
     if (targetValue !== "") {
-      props.history.push(`/search?q=${targetValue}`)
+      console.log(targetValue)
     }
   }
   
 
     return (
-      <StyledSearch onSubmit={(e) => e.preventDefault()} method="get">
+      <StyledSearch method="get">
         <StyledLabel htmlFor="header-search">
           search in {location()}
         </StyledLabel>

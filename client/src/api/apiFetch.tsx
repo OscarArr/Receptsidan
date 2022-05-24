@@ -16,4 +16,12 @@ const getFetch = async (url: any) => {
     return result
 }
 
+export const postRating = async (url: string, data: object) => {
+    console.log("api rating1",axios.defaults.baseURL, url, data)
+    const rating: any = await axios.post(url, data)
+    console.log("api rating2", rating)
+    return rating
+}
+
+
 export default getFetch

@@ -1,9 +1,5 @@
 import {
-  // BrowserRouter as Router,
   useLocation
-  // Route,
-  // Link,
-  // useParams
 } from 'react-router-dom'
 import SearchBar from './SearchComponent';
 import NavList from './RecipesNavList'
@@ -17,6 +13,7 @@ const StyledButtonContainer = styled.div`
   justify-content: space-around;
   width: 100%;
   flex-wrap: wrap;
+  margin-top: 10px;
 `
 
 const SideBarNavStyled = styled.section`
@@ -25,8 +22,9 @@ const SideBarNavStyled = styled.section`
   width: 20%;
   max-width: 400px;
   min-width: 250px;
-  background-color: green;
+  background-color: white;
   height: 100vh;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
 `
 
 

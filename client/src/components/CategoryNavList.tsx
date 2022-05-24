@@ -14,7 +14,7 @@ const StyledCategoryList = styled.ul`
 
    a{
     text-decoration: none;
-    color: white;
+    color: #016801;
 
       &:hover{
         font-weight: 650;
@@ -24,7 +24,7 @@ const StyledCategoryList = styled.ul`
 
 const StyledTitle = styled.h4`
   margin: 16px 0 0 16px;
-  color: white;
+  color: #016801;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   text-decoration: underline;
 `

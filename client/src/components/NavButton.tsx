@@ -8,7 +8,7 @@ import {
 import styled from 'styled-components'
 
 const StyledNavButton = styled.button`
-  background-color: white;
+  background-color: #016801;
   padding: 4px;
   border: 1px solid black;
   width: 45%;
@@ -24,7 +24,7 @@ const StyledNavButton = styled.button`
 
     a{
       text-decoration: none;
-      color: green;
+      color: white;
       font-size: 1.1rem;
       font-weight: 600;
     }

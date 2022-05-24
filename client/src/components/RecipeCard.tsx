@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import ReactStars from 'react-stars'
 import styled from "styled-components";
+import { postRating } from "../api/apiFetch";
 
 
 const StyledRecipeCard = styled.section`
   min-width: 500px;
   max-width: 800px;
   min-height: 600px;
-  /* max-height: 900px; */
-  background-color: green;
-  color: white;
+  background-color: white;
+  color: #016801;
   margin: 20px;
   padding: 20px;
+  /* border: 1px solid #016801; */
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
   display: grid;
   grid-template-areas: 
     "StyledTitle StyledTitle StyledTitle"
@@ -30,17 +33,8 @@ const StyledTitle = styled.h1`
 const StyledPicture = styled.img`
   grid-area: StyledPicture;
   width: 300px;
-  /* max-width: 250px; */
   margin: 0 0 10px 0;
-  /* padding: 10px; */
 `
-
-// const StyledContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   /* justify-content: space-evenly; */
-//   /* width: 100%; */
-// `
 
   const StyledDescription = styled.h4`
     grid-area: StyledDescription;
@@ -54,21 +48,18 @@ const StyledPicture = styled.img`
   const StyledInfo = styled.div`
     grid-area: StyledInfo;
     width: 280px;
-    border: 1px solid white;
+    border: 1px solid #016801;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0 10px 10px 0;
     padding: 10px;
-    /* width: 100%; */
-    /* max-height: 5rem; */
   `
 
     const StyledCategories = styled.ul`
       align-self: center;
       list-style: none;
       display: flex;
-      /* flex-direction: row; */
       justify-content: space-evenly;
       font-size: 0.8rem;
       width: 100%;
@@ -91,7 +82,7 @@ const StyledPicture = styled.img`
 
 const StyledIngredients = styled.ul`
   grid-area: StyledIngredients;
-  border: 1px solid white;
+  border: 1px solid #016801;
   display: flex;
   flex-direction: column;
   margin: 0 10px 10px 0;
@@ -102,7 +93,7 @@ const StyledIngredients = styled.ul`
 
 const StyledInstructions = styled.ol`
   grid-area: StyledInstructions;
-  border: 1px solid white;
+  border: 1px solid #016801;
   display: flex;
   flex-direction: column;
   margin: 0 10px 0 0;
@@ -117,7 +108,9 @@ const RecipeCard = (props: any) => {
   const [rating, setRating] = useState(0);
   
   const handleRating = (rate: number) => {
-    
+    console.log("rating", rating)
+    console.log("props.data._id", props.data._id)
+    postRating(`/recipes/${props.data._id}/ratings`, { rating: rate })
     setRating(rate);
   }
 
