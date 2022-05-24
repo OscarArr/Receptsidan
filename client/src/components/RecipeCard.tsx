@@ -1,14 +1,7 @@
-import { useEffect } from "react";
-// import {
-//   // BrowserRouter as Router,
-//   useLocation,
-//   // Route,
-//   // Link,
-//   useParams
-// } from 'react-router-dom'
-// import getFetch from '../api/apiFetch'
+import { useEffect, useState } from "react";
+import ReactStars from 'react-stars'
 import styled from "styled-components";
-// import image from "../../assets/images/ädelgrytakonjak.jpg";
+
 
 const StyledRecipeCard = styled.section`
   min-width: 400px;
@@ -108,13 +101,20 @@ const StyledInstructions = styled.ol`
   /* width: 100%; */
 `
 
+const StyledStarRating = styled(ReactStars)`
+  
+
+`
+
+
 const RecipeCard = (props: any) => {
 
-  // const [recipeData, setRecipeData] = useState<any[]>([]);
+  const [rating, setRating] = useState(0);
   
-  // const currentLocation = useLocation()
-  // const params = useParams()
-  // console.log("useParams", useParams())
+  const handleRating = (rate: number) => {
+    
+    setRating(rate);
+  }
 
   useEffect(() => {
 
@@ -126,7 +126,7 @@ const RecipeCard = (props: any) => {
   const recipeCardInfo = () => {
     if (recipeData) {
       const data: any = recipeData
-      // console.log(data)
+      
       return (
         <StyledRecipeCard className="recipe-card">
           <StyledTitle>{data.title}</StyledTitle>
@@ -135,8 +135,15 @@ const RecipeCard = (props: any) => {
             <StyledInfo>
               <StyledInfoChild>{data.timeInMins} minuter</StyledInfoChild>
               <StyledInfoChild>portioner: {data.servings}</StyledInfoChild>
-              <StyledInfoChild>Snittbetyg: {Math.round(data.ratings.reduce((acc: any, curr: any) => acc + curr, 0) / data.ratings.length)}
-              </StyledInfoChild>
+              <StyledStarRating
+                count={5}
+                value={Math.round(data.ratings.reduce((acc: any, curr: any) => acc + curr, 0) / data.ratings.length)}
+                onChange={handleRating}
+                size={12}
+                half={false}
+                color2={'#ffd700'} />
+              {/* <StyledInfoChild>Snittbetyg: {Math.round(data.ratings.reduce((acc: any, curr: any) => acc + curr, 0) / data.ratings.length)}
+              </StyledInfoChild> */}
               <StyledCategories>
                 {data.category.map((cat: string) => 
                   <li key={cat}>{cat}</li>

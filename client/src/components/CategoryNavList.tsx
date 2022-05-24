@@ -19,12 +19,9 @@ const StyledTitle = styled.h4`
 `
 
 const CategoryNavList = (props: any) => {
-  // const [showNavLinks, setShowNavLinks] = useState(false);
   const [navLinks, setNavLinks] = useState<any[]>([]);
   
   const currentLocation = useLocation()
-
-  console.log("CategoryNavList")
   
   useEffect(() => {
     const Links = async () => {

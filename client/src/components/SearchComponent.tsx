@@ -34,14 +34,21 @@ const SearchBar = (props: any) => {
       return "recipes"
     } 
   }
+
+  const addSearchQuery= (targetValue: string) => {
+    if (targetValue !== "") {
+      props.history.push(`/search?q=${targetValue}`)
+    }
+  }
   
 
     return (
-      <StyledSearch onSubmit={(e) => e.preventDefault()} action={useLocation().pathname} method="get">
+      <StyledSearch onSubmit={(e) => e.preventDefault()} method="get">
         <StyledLabel htmlFor="header-search">
           search in {location()}
         </StyledLabel>
         <input 
+            onChange={(e) => addSearchQuery(e.target.value)}
             type="text"
             id="header-search"
             placeholder="Search Recipes"

@@ -36,6 +36,7 @@ const NavList = (props: any) => {
       return links.join("/")
     }
   }
+
   
   const Links = async () => {
     if(currentLocation.search !== "") {
@@ -50,7 +51,7 @@ const NavList = (props: any) => {
   useEffect(() => {
     Links()
 
-  }, [currentLocation.search])
+  }, [currentLocation.pathname])
 
   const location = () => {
     if (currentLocation.pathname.split("/")[1] === "categories" && currentLocation.pathname.split("/")[2]) {
