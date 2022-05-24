@@ -22,19 +22,12 @@ const App = () => {
       <BrowserRouter>
       <SideBarNav />
       <Routes>
-        <Route path="/" element={<RecipeList />} >
-        </Route>
-        <Route path="/recipes" element={<RecipeList />} >
-        </Route>
-        <Route path="/recipes/:id" element={<RecipeView />} >
-        </Route>
-        <Route path="categories/:category/recipes" element={<CategoryView />} >
-        </Route>
-        <Route path="categories/:category/recipes/:id" element={<RecipeView />}>
-        </Route>
-        {/* <Route path="/recipes" element={<SideBarNav />} />
-        <Route path="/categories" element={<SideBarNav />} /> */}
-        {/* <Route path="/categories/:category/recipes" element={<RecipeLink />} /> */}
+        <Route path="/" element={<RecipeList />} />
+        <Route path="/recipes" element={<RecipeList />} />
+        <Route path="/recipes/:id" element={<RecipeView />} />
+        <Route path="/categories" element={<RecipeList />} />
+        <Route path="/categories/:category/recipes" element={<CategoryView />} />
+        <Route path="/categories/:category/recipes/:id" element={<RecipeView />} />
       </Routes>
       </BrowserRouter>
     </StyledApp>

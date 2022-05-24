@@ -18,6 +18,8 @@ const StyledSearch = styled.form`
 const StyledLabel = styled.label`
   width: 100%;
   font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 `
 
 

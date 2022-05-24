@@ -10,13 +10,25 @@ import styled from 'styled-components';
 const StyledCategoryList = styled.ul`
   display: flex;
   flex-direction: column;
-  text-decoration: none;
   margin: 0;
+
+   a{
+    text-decoration: none;
+    color: white;
+
+      &:hover{
+        font-weight: 650;
+      }
+   }
 `
 
 const StyledTitle = styled.h4`
   margin: 16px 0 0 16px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
 `
+
 
 const CategoryNavList = (props: any) => {
   const [navLinks, setNavLinks] = useState<any[]>([]);

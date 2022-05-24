@@ -25,7 +25,7 @@ const SideBarNavStyled = styled.section`
   width: 20%;
   max-width: 400px;
   min-width: 250px;
-  background-color: #f5f5f5;
+  background-color: green;
   height: 100vh;
 `
 
@@ -36,7 +36,7 @@ const SideBarNav = () => {
     if (currentLocation.pathname === "/categories" || currentLocation.pathname === "/categories/") {
       return (<CategoryNavList />)
     } 
-    else if (currentLocation.pathname.includes("/recipes")) {
+    else if (currentLocation.pathname.includes("/recipes") || currentLocation.pathname === "/") {
       return (<NavList />)
     }
   }
